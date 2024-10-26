@@ -80,7 +80,7 @@ void FastLog::i(const char *file, int line, const char *message, ...) {
 #ifdef ANDROID
     __android_log_vprint(ANDROID_LOG_INFO, LIB_TAG, message, arg_ptr);
 #else
-    printf("\033[34m%s %-5s [%s@%d] ", current_time().c_str(), "INFO", file, line);
+    printf("\033[36m%s %-5s [%s@%d] ", current_time().c_str(), "INFO", file, line);
     vprintf(message, arg_ptr);
     printf("\033[0m\n");
     fflush(stdout);
